@@ -2,6 +2,7 @@
 
 # database
 /database.json
+/upload
 
 # dependencies
 /node_modules

@@ -20,7 +20,6 @@ const styles = theme => ({
   root: {
     width: '100%',
     minWidth: 1080,
-    marginTop: theme.spacing(3),
     overflowX: "auto"
   },
   menu: {
@@ -136,7 +135,6 @@ class App extends Component {
   }
 
   handleValueChange = (e) => {
-    const { searchKeyword } = this.state;
     this.setState({
       searchKeyword: e.target.value
     })
@@ -144,7 +142,7 @@ class App extends Component {
 
   render() {
     const { classes } = this.props;
-    const cellList = ["번호", "이미지", "이름", "생년월일", "성별", "직업", "설정"]
+    const cellList = ["No", "Profile", "Name", "Birth", "Gender", "Job", "Settings"]
     const filteredComponents = (data) => {
       data = data.filter((c) => {
         return c.name.indexOf(this.state.searchKeyword) > -1;
@@ -166,14 +164,14 @@ class App extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              고객 관리 시스템
+              Customer Management System
           </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
               <InputBase
-                placeholder="검색하기"
+                placeholder="Search.."
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
